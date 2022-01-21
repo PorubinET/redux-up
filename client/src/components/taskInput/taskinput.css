@@ -1,0 +1,31 @@
+
+  .to-do__list-btn{
+    position: absolute;
+		cursor: pointer;
+    width: 20px;
+    height: 20px;
+    top: 16px;
+    left: 12px;
+    opacity: 0;
+    z-index: 2;
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+  }
+  .to-do__list-btn-arrow{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    display: none;
+    left: 16px;
+    top: 20px;
+    transition: all .3s;
+  }
+  .to-do__list-btn-active, .to-do__list-btn-arrow-active{
+    display: block;
+    opacity: 0.3;
+  }
+  .to-do__fading{
+    opacity: 1;
+  }

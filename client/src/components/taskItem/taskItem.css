@@ -1,0 +1,209 @@
+
+    .to-do__tasks__item{
+        display: block;
+        width: 100%;
+    }
+    .to-do__list{
+        width: 100%;
+        display: block;
+    }
+    .to-do__list-li{
+        width: 100%;
+        height: 65px;
+        text-align: end;
+        background-color: #fff;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.18);
+        position: relative;
+    }
+    
+    .to-do__list-li{
+        position: relative;
+        border-bottom: 1px solid #ededed;
+    }
+    .to-do__checkbox-input{
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 10px;
+        top: 20px;
+        z-index: 8;
+        cursor: pointer;
+    }
+    .to-do__checkbox{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        left: 10px;
+        top: 20px;
+        z-index: 1;
+        cursor: pointer;     
+    }
+    .to-do__text{
+        margin-left: 40px;
+        border: 2px solid transparent;
+        outline: none;
+        transition: all .4s;
+        background: transparent;
+        position: relative;
+        top: 22px;
+        width: 80%;
+        font-size: 20px;
+        color: #000;
+        font-family: 'Roboto';
+    }
+    .to-do__text:focus{outline:none;}
+
+    .to-do__text-active{
+        border: 2px solid #000;
+    }
+    .to-do__checkbox-actve{
+        border: 1px solid rgba(21, 148, 99, 0.2);
+    }
+    .to-do::before{
+        width: 12px;
+        height: 12px;
+    }
+    .to-do__checkbox-check{
+        top: 24px;
+        left: 12px;
+        width: 20px;
+        height: 18px;
+        position: absolute;
+    }
+    .to-do__checkbox-check{
+        opacity: 0;
+        transition: all .4s;
+    }
+    .to-do__checkbox-check-active{
+        opacity: 1;
+        z-index: 1;
+    }   
+    .to-do__done{
+        color: #d9d9d9;
+        text-decoration: line-through;
+    }
+    .to-do__checkbox-btn{
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        opacity: 0;
+        transition: all .3s;
+    }
+    .to-do__list-li:hover .to-do__checkbox-btn{
+        opacity: 1;
+    }
+    .xuita{
+        opacity: 0;
+    }
+    .to-do__list-li .MuiInput-input{
+        z-index: 10;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .to-do__material{
+        font-size: 16px;
+        line-height: 20px;
+        position: absolute;
+        right: 0;
+        top: 38px;  
+    }
+    .to-do__Date{
+        right: 160px;
+        max-width: 100px;
+    }
+    .to-do__Time{
+        right: 0px;
+        max-width: 140px;
+    }
+    /* ///////////// */
+
+.to-do__menu{
+    position: relative;
+    bottom: 24px;
+    height: 25px;
+    right: 25px;
+    display: flex;
+    width: 100%;
+}
+
+.to-do__menu-wrapp{
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    right: 15px;
+    width: 160px;
+}
+.to-do__menu-wrapp{
+    opacity: 0;
+    display: none;
+}
+
+.to-do__menu-wrapp.active{
+    display: block;
+    position: absolute;
+    opacity: 1;
+}
+
+.to-do__menu-brn{
+    color: black;
+}
+
+.to-do__menu-img{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+}
+
+.to-do__menu-add{
+    position: absolute;
+    right: 16px;
+    top: 2px;
+    opacity: 0;
+    transition: all .3s;
+}
+.to-do__list-li:hover .to-do__menu-add{
+    opacity: 1;
+}
+
+.to-do__menu-wrapp{
+    display: flex;
+}
+
+.to-do__menu-btn-wrapp{
+    display: inline;
+    position: relative;
+    width: 100%;
+}
+
+.to-do__menu-brn:hover:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: rgb(180, 58, 58);
+    bottom: 0;
+    transform: translateX(-5px);
+}
+
+.to-do__description {
+    position: absolute;
+    width: 65%;
+    height: 65px;
+    z-index: 100;
+    bottom: -1px;
+    /* border: 1px solid #df24248c; */
+    background-color: white;
+}
+
+textarea {
+    resize: none; 
+} 
