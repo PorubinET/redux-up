@@ -4,7 +4,6 @@ import {
     FILTER_TASK,
     UPDATE_TEXT,
     UPDATE_DESC,
-    UPDATE_DETE,
     DELETE_TASK,
     DELETE_TASK_ALL,
     COMPLETED_ALL_TASK,
@@ -75,28 +74,22 @@ export function updateText(text, _id, done) {
 }
 
 
-////UPDATE_DETE
 export function updateDate(_id, value) { 
-    console.log(_id, value, "UPDATE_DETE") 
     return async dispatch => {
         try {
             await updateTask(_id, {date: value})
-            // dispatch({
-            //     type: UPDATE_DETE,
-            //     payload: {text, _id}
-            // });
         } catch (error) {
             console.log(error);
         }
     }
 }
-
-
 ///////////////
+
+
+
 
 ///////////////////
 export function updateDesc(_id, desc) {  
-    console.log(_id, desc, "updateDesc")
     return async dispatch => {
         try {
             await updateTask(_id, {desc: desc})

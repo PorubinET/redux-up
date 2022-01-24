@@ -55,7 +55,7 @@ function TaskItem(props) {
         e.currentTarget.classList.add("to-do__text-active")
     }
 
-    const addBtn = (e) => {
+    const addPopap = (e) => {
         e.preventDefault();
         setBtn(!btn)
     }
@@ -110,6 +110,7 @@ function TaskItem(props) {
                 console.log(error);
             }
             dispatch(updateDesc(_id, input))
+            setBtn(!btn)
         }
     };
 ///////////////////////////////
@@ -145,9 +146,9 @@ function TaskItem(props) {
     }
 
     if (btn) {
-        classBtn = "to-do__menu-wrapp active"
+        classBtn = "to-do__popup active"
     } else {
-        classBtn = "to-do__menu-wrapp"
+        classBtn = "to-do__popup"
     }
 
     const onCalendarChange = (e) => {
@@ -165,8 +166,6 @@ function TaskItem(props) {
                     format="YYYY-MM-DD-HH:mm"
                     autoOk={true}
                     onChange={onCalendarChange}
-                    // onClick={onCalendarChange} 
-                    // onFocus={() => alert('click')} 
                     />
                 </div>
             </MuiPickersUtilsProvider>
@@ -212,34 +211,30 @@ function TaskItem(props) {
                         >
                             {text}
                         </div>
-                        <div className="to-do__desc-wrap" id="parent">
-                            <textarea
-                                className="to-do__description"
-                                maxLength="130"
-                                name="text"
-                                onChange={handleInput}
-                                placeholder="Description"
-                                defaultValue={desc}
-                                index={_id}
-                                readOnly
-                            /> 
-                        <button className="to-do__menu-add" onClick={addBtn}>
-                            <img className="to-do__menu-img" src="/img/pencil.svg" alt="add"/>
-                        </button>
-                            <div className="to-do__menu">
-                                <div className={classBtn}>
-                                    <div className="to-do__menu-btn-wrapp">
-                                        <button className="to-do__menu-btn" onClick={handleUpdateDesc}>add</button>
-                                    </div>
-                                    <div className="to-do__menu-btn-wrapp">
-                                        <button className="to-do__menu-btn" onClick={() => watch(_id)}>watch</button>
-                                    </div>
-                                    <div className="to-do__menu-btn-wrapp">
-                                        <button className="to-do__menu-btn" onClick={() => change(_id)}>change</button>
-                                    </div>
+                        <div className={classBtn}>
+                            <div className="to-do__desc-wrap">
+                                    <button className="to-do__btn-exit" onClick={addPopap}>
+                                        <img className="to-do__checkbox-cross" src="/img/cross.svg" alt="delete" />
+                                    </button>
+                                <label className="to-do__label">
+                                    <textarea
+                                        className="to-do__description"
+                                        maxLength="130"
+                                        name="text"
+                                        onChange={handleInput}
+                                        placeholder="Description"
+                                        defaultValue={desc}
+                                        index={_id}
+                                    />
+                                </label>
+                                    <button className="to-do__btn-add" onClick={handleUpdateDesc}>отправить</button>
+                                <div className="to-do__btn-wrap">
                                 </div>
                             </div>
-                        </div>           
+                        </div>       
+                        <button className="to-do__menu-add" onClick={addPopap}>
+                            <img className="to-do__menu-img" src="/img/pencil.svg" alt="add"/>
+                        </button>                
                         <button className="to-do__checkbox-btn" onClick={handleDelete}>
                             <img className="to-do__checkbox-cross" src="/img/cross.svg" alt="delete" />
                         </button>
