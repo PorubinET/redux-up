@@ -153,14 +153,6 @@
     color: black;
 }
 
-.to-do__menu-img{
-    cursor: pointer;
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    right: 20px;
-}
-
 .to-do__menu-add{
     position: absolute;
     right: 16px;
@@ -253,8 +245,6 @@
     width: 140px;
     width: 100%;
     bottom: 20px;
-    /* opacity: 0; */
-    /* display: none; */
 }
 
 .to-do__btn-wrap{
@@ -279,21 +269,40 @@ textarea {
     right: 2px;
 }
 
-.to-do__btn-add{
+.to-do__btn-send{
     position: relative;
     bottom: -50px;
 }
 
-.to-do__btn-add:hover{
+.to-do__btn-send:hover{
     color: rgb(247, 85, 85);
 }
 
-.to-do__description{
-    /* display: none; */
-    /* opacity: 0; */
+
+/* //////////////////material ui */
+
+.to-do__menu-img{
+    cursor: pointer;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: 20px;
 }
 
-.to-do__description.active{
-    /* display: block; */
-    /* opacity: 1; */
+.to-do__wrapp-div .MuiButton-text {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+/* .to-do__wrapp-div .MuiButton-label.to-do__btn-add{
+    position: relative;
+    bottom: -40px;
+    right: -30px;
+} */
+
+.to-do__btn-add-desc{
+    position: absolute;
+    right: 35px;
+    top: 50px;
 }
